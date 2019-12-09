@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Nu.Messaging</AssemblyName>
+    <RootNamespace>Nu.Messaging</RootNamespace>
+    <Configurations>Debug;Release;Release (Nuget)</Configurations>
+    <Authors>Daniel Thomas</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Library for internal pub/sub and RPC</Description>
+    <Copyright>2019</Copyright>
+    <RepositoryUrl>https://github.com/thegodofsleep215/Nu.MessageRouting</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/thegodofsleep215/Nu.MessageRouting</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="IF NOT &quot;$(ConfigurationName)&quot; == &quot;Release (Nuget)&quot; GOTO END&#xD;&#xA;&#xD;&#xA;:END" />
+  </Target>
+
+</Project>
