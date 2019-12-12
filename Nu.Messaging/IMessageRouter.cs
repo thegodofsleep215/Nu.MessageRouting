@@ -6,6 +6,8 @@ namespace Nu.Messaging
     {
         void Publish<T>(T message, string key);
 
+        void PublishObject(object message, string key);
+
         TR RemoteCall<T, TR>(T message);
 
         void Subscribe<T>(Action<T> callback, string key);

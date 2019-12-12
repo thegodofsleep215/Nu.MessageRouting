@@ -1,8 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Configurations>Debug;Release;Release (Nuget)</Configurations>
+    <Version>1.0.1</Version>
+    <Authors>Daniel Thomas</Authors>
+    <Company />
+    <Copyright>2019</Copyright>
+    <PackageProjectUrl>https://github.com/thegodofsleep215/Nu.MessageRouting</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/thegodofsleep215/Nu.MessageRouting</RepositoryUrl>
+    <Description>Library for internal pub/sub and rpc.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>

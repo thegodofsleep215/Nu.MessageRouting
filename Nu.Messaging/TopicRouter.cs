@@ -10,6 +10,17 @@ namespace Nu.Messaging
     {
         Dictionary<Type, List<TopicSubscription>> subscriptions = new Dictionary<Type, List<TopicSubscription>>();
         Dictionary<Type, Dictionary<Type, object>> remoteCalls = new Dictionary<Type, Dictionary<Type, object>>();
+        private Dictionary<Type, MethodInfo> publishInfos = new Dictionary<Type, MethodInfo>();
+
+        public void PublishObject(object message, string key)
+        {
+            if (!publishInfos.ContainsKey(message.GetType()))
+            {
+                var methodInfo = GetType().GetMethod("Publish");
+                publishInfos[message.GetType()] = methodInfo.MakeGenericMethod(new[] { message.GetType() });
+            }
+            publishInfos[message.GetType()].Invoke(this, new[] { message, key });
+        }
 
         public void Publish<T>(T message, string key)
         {
